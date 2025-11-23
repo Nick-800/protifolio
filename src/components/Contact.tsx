@@ -38,7 +38,7 @@ const Contact = () => {
     {
       icon: MapPin,
       label: "LOCATION_DATA",
-      value: "San Francisco, CA",
+      value: "Benghazi, LIBYA",
       href: "#"
     }
   ];
