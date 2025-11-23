@@ -26,13 +26,13 @@ const Contact = () => {
     {
       icon: Mail,
       label: "EMAIL_ADDRESS",
-      value: "your.email@example.com",
-      href: "mailto:your.email@example.com"
+      value: "sohaibkamash@gmail.com",
+      href: "mailto:ohaibkamash@gmail.com"
     },
     {
       icon: Phone,
       label: "PHONE_NUMBER",
-      value: "+1 (555) 123-4567",
+      value: "+218 948890001",
       href: "tel:+15551234567"
     },
     {
