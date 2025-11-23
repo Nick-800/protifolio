@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 120 100% 75%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 120 100% 75%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 120 100% 75%;
+
+    --primary: 120 100% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 120 100% 75%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 120 60% 50%;
+
+    --accent: 120 100% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 120 100% 75%;
+
+    --border: 120 100% 25%;
+    --input: 0 0% 10%;
+    --ring: 120 100% 50%;
+
+    --radius: 0rem;
+
+    /* Terminal design tokens */
+    --terminal-green: 120 100% 50%;
+    --terminal-green-dim: 120 100% 35%;
+    --terminal-green-bright: 120 100% 75%;
+    --terminal-cursor: 120 100% 50%;
+    
+    --glow-terminal: 0 0 20px hsl(120 100% 50% / 0.5), 0 0 40px hsl(120 100% 50% / 0.3);
+    --text-shadow-terminal: 0 0 5px hsl(120 100% 50% / 0.8);
+    
+    --transition-smooth: all 0.15s linear;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 120 100% 75%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 120 100% 75%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 120 100% 75%;
+
+    --primary: 120 100% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 120 100% 75%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 120 60% 50%;
+
+    --accent: 120 100% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 120 100% 75%;
+
+    --border: 120 100% 25%;
+    --input: 0 0% 10%;
+    --ring: 120 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'IBM Plex Mono', 'Fira Code', 'Courier New', monospace;
+    text-shadow: var(--text-shadow-terminal);
+    letter-spacing: 0.05em;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .glow-terminal {
+    box-shadow: var(--glow-terminal);
+    text-shadow: var(--text-shadow-terminal);
+  }
+
+  .terminal-text {
+    text-shadow: var(--text-shadow-terminal);
+  }
+
+  .gradient-text {
+    color: hsl(var(--primary));
+    text-shadow: var(--text-shadow-terminal);
+  }
+
+  .terminal-border {
+    border: 2px solid hsl(var(--border));
+    box-shadow: var(--glow-terminal);
+  }
+
+  .terminal-box {
+    position: relative;
+  }
+
+  .terminal-box::before {
+    content: '╔' attr(data-title) '═══════════════════════════════════════════════════════╗';
+    position: absolute;
+    top: -1.5rem;
+    left: 0;
+    right: 0;
+    color: hsl(var(--border));
+    font-size: 0.875rem;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .terminal-box::after {
+    content: '╚═══════════════════════════════════════════════════════╝';
+    position: absolute;
+    bottom: -1.5rem;
+    left: 0;
+    right: 0;
+    color: hsl(var(--border));
+    font-size: 0.875rem;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .cursor-blink {
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  .scanline {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scanline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(transparent, hsl(var(--primary) / 0.3));
+    animation: scan 8s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes scan {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100vh); }
+  }
+
+  .card-hover {
+    transition: var(--transition-smooth);
+  }
+
+  .card-hover:hover {
+    box-shadow: var(--glow-terminal);
+    border-color: hsl(var(--primary));
+  }
+
+  .typing {
+    overflow: hidden;
+    border-right: 2px solid hsl(var(--terminal-cursor));
+    white-space: nowrap;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: hsl(var(--terminal-cursor)); }
+  }
+}
