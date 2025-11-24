@@ -18,7 +18,7 @@ const Footer = () => {
           <div className="space-y-2 text-center md:text-left">
             <p className="text-sm text-muted-foreground flex items-center gap-2 justify-center md:justify-start">
               <span className="text-primary">&gt;</span>
-              <span>© {currentYear} YOUR_NAME | ALL_RIGHTS_RESERVED</span>
+              <span>© {currentYear} SOHAIB_KAMASH | ALL_RIGHTS_RESERVED</span>
             </p>
             <p className="text-xs text-muted-foreground flex items-center gap-2 justify-center md:justify-start">
               <span className="text-primary">$</span>
