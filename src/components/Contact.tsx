@@ -166,7 +166,7 @@ const Contact = () => {
               <Button 
                 type="submit" 
                 size="lg"
-                className="w-full border-2 border-primary bg-transparent hover:bg-primary hover:text-black text-primary font-mono glow-terminal"
+                className="w-full border-2 border-primary bg-transparent hover:bg-primary hover:text-black text-primary font-mono hover:glow-terminal"
               >
                 [TRANSMIT_MESSAGE]
               </Button>
