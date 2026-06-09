@@ -27,13 +27,13 @@ const Contact = () => {
       icon: Mail,
       label: "EMAIL_ADDRESS",
       value: "sohaibkamash@gmail.com",
-      href: "mailto:ohaibkamash@gmail.com"
+      href: "mailto:sohaibkamash@gmail.com"
     },
     {
       icon: Phone,
       label: "PHONE_NUMBER",
       value: "+218 948890001",
-      href: "tel:+15551234567"
+      href: "tel:+218948890001"
     },
     {
       icon: MapPin,

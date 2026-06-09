@@ -29,7 +29,7 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex gap-3">
             <a
-              href="https://github.com"
+              href="https://github.com/Nick-800"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 border-2 border-border hover:border-primary transition-all hover:glow-terminal bg-black/50"
@@ -47,7 +47,7 @@ const Footer = () => {
               <Linkedin className="h-5 w-5 text-primary" />
             </a>
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:sohaibkamash@gmail.com"
               className="p-3 border-2 border-border hover:border-primary transition-all hover:glow-terminal bg-black/50"
               aria-label="Email"
             >
