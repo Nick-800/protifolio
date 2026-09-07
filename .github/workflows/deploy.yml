@@ -1,0 +1,69 @@
+name: CI/CD & Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    name: Lint & Build Verification
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Run Production Build
+        run: npm run build
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-artifact
+          path: dist/
+          retention-days: 7
+
+  deploy:
+    name: Deploy to Vercel
+    needs: build-and-test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Deploy to Vercel Production
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          if [ -n "$VERCEL_TOKEN" ]; then
+            echo "🚀 Vercel Token detected. Deploying via Vercel CLI..."
+            npx --yes vercel deploy --prod --token="$VERCEL_TOKEN" --yes
+          else
+            echo "ℹ️ VERCEL_TOKEN secret not configured in GitHub repository."
+            echo "ℹ️ If you have connected your GitHub repo directly in the Vercel dashboard, Vercel deploys automatically on every push."
+            echo "ℹ️ To deploy directly from this GitHub Action, add VERCEL_TOKEN (and optionally VERCEL_ORG_ID, VERCEL_PROJECT_ID) in Repo Settings -> Secrets -> Actions."
+          fi

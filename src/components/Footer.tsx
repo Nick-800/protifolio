@@ -38,7 +38,7 @@ const Footer = () => {
               <Github className="h-5 w-5 text-primary" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/sohaib-kamash"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 border-2 border-border hover:border-primary transition-all hover:glow-terminal bg-black/50"

@@ -1,73 +1,97 @@
-# Welcome to your Lovable project
+# 🖥️ Sohaib Kamash — Retro CRT Terminal Portfolio
 
-## Project info
-
-**URL**: https://lovable.dev/projects/af6610cf-84d0-402c-905f-adcb25314b71
-
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/af6610cf-84d0-402c-905f-adcb25314b71) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```text
+ ╔══════════════════════════════════════════════════════════════════════════╗
+ ║  SOHAIB KAMASH :: FULL STACK DEVELOPER PORTFOLIO                        ║
+ ║  SYSTEM VERSION 2.0.0 [CRT BIOS v4.04]                                  ║
+ ║  STATUS: ONLINE | TERMINAL READY                                        ║
+ ╚══════════════════════════════════════════════════════════════════════════╝
 ```
 
-**Edit a file directly in GitHub**
+An interactive, retro-futuristic CRT terminal portfolio showcasing full-stack engineering expertise, systems architecture, and web applications. Styled with realistic monochrome phosphorous CRT glow, scanline animations, interactive CLI emulation, and customizable CRT color phosphors.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## ✨ Features
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **📺 Retro CRT Aesthetics:** Scanline passes, flicker effects, custom glowing typography, box-drawing ASCII borders, and phosphor glow.
+- **💻 Interactive Command Terminal:** Functional in-browser CLI emulator with command history, auto-scroll, and interactive system utilities.
+- **🎨 Dynamic CRT Phosphor Themes:** Switch seamlessly between CRT phosphor modes:
+  - `green` (P1 Phosphor Classic Terminal)
+  - `amber` (P3 Amber Monochrome)
+  - `cyan` (P4 Phosphor Cyan Glaze)
+  - `rose` (Synthwave / Magenta Neon)
+- **⚡ Reactive & Responsive:** Fully responsive layout across desktop and mobile devices, engineered with modern React 18, Vite, and Tailwind CSS.
+- **🚨 Retro 404 Kernel Panic Screen:** Custom CRT crash dump screen with simulated memory trace and one-click system reboot.
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## 🛠️ Tech Stack
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+| Layer | Technology |
+|---|---|
+| **Framework** | [React 18](https://react.dev/) + [Vite](https://vitejs.dev/) |
+| **Language** | [TypeScript](https://www.typescriptlang.org/) |
+| **Styling** | [Tailwind CSS](https://tailwindcss.com/) + Custom CRT Keyframe Animations |
+| **UI Components** | Radix UI Primitives / shadcn/ui |
+| **Icons** | [Lucide React](https://lucide.dev/) |
+| **State & Context** | React Context API (`ThemeContext` with localStorage persistence) |
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/af6610cf-84d0-402c-905f-adcb25314b71) and click on Share -> Publish.
+## ⌨️ Terminal Commands
 
-## Can I connect a custom domain to my Lovable project?
+The hero terminal accepts interactive commands:
 
-Yes, you can!
+| Command | Description |
+|---|---|
+| `help` | Lists all available terminal commands |
+| `about` | Navigates to developer bio, experience, and background |
+| `skills` | Jumps to technical stack and system proficiencies |
+| `contact` | Opens the secure transmission protocol (contact form) |
+| `theme [color]` | Changes phosphor color (`green`, `amber`, `cyan`, `rose`) |
+| `clear` | Clears terminal screen history |
+| `sudo [command]` | Executes command with administrator privileges |
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure you have [Node.js](https://nodejs.org/) (version 18+ recommended) and `npm` installed.
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Nick-800/protifolio.git
+   cd protifolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the local development server:**
+   ```bash
+   npm run dev
+   ```
+   Open `http://localhost:5173` to explore the terminal.
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+5. **Lint the codebase:**
+   ```bash
+   npm run lint
+   ```
+
+---
+
+## 📄 License
+
+Created by **Sohaib Kamash**. All rights reserved.
